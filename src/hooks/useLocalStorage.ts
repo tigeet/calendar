@@ -24,6 +24,7 @@ export function useLocalStorage<T>({
     (action) => {
       const computedValue = action instanceof Function ? action(value) : value;
       setValue(computedValue);
+
       localStorage.setItem(key, JSON.stringify(computedValue));
     },
     [key, value]

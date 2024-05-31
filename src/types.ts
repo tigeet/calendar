@@ -1,7 +1,8 @@
-export type Todo = {
+export type TTodo = {
   id: string;
-  createdAt: Date;
+  createdAt: number;
   completed: boolean;
   title: string;
-  description: string;
 };
+
+export type View = "month" | "week";
