@@ -1,0 +1,95 @@
+.todo {
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  background-color: rgb(243, 243, 242);
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    transition: background-color 0.15s ease;
+    background-color: rgb(230, 230, 230);
+  }
+
+  .todo-date {
+    font-size: 18px;
+  }
+  .todo-date_isFiller {
+    color: rgb(128, 126, 126);
+  }
+
+  .todo-date_isDayoff {
+    color: #e30000;
+  }
+
+  .todo-date_today {
+    font-weight: 500;
+  }
+
+  .todo-items {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 4px;
+  }
+
+  .todo-item {
+    padding: 2px 4px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .todo-todoInfo {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .todo-todoPoint {
+    background-color: rgb(52, 170, 220);
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+  }
+
+  .todo-todoTitle {
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 80px;
+  }
+
+  .todo-todoTitle_completed {
+    text-decoration: line-through;
+    color: rgb(128, 126, 126);
+  }
+
+  .todo-extra {
+    color: #0071e3;
+  }
+
+  .todo-todosCount {
+    color: white;
+    display: none;
+    width: 24px;
+    height: 24px;
+
+    border-radius: 100%;
+    background-color: rgb(52, 170, 220);
+  }
+
+  @media screen and (width < 768px) {
+    .todo-extra,
+    .todo-items {
+      display: none;
+    }
+
+    .todo-todosCount {
+      display: flex;
+    }
+  }
+}
