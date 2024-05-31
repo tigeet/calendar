@@ -1,0 +1,9 @@
+.actionButton {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px rgb(206, 205, 205);
+
+  cursor: pointer;
+}
