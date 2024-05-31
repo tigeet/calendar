@@ -1,0 +1,53 @@
+.iconButton {
+  & > svg {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    z-index: 11;
+  }
+
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+
+  &:hover {
+    &::after {
+      transition: background-color 0.15s ease;
+      background-color: rgb(230, 230, 230);
+    }
+  }
+
+  &::after {
+    z-index: 10;
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    transition: background-color 0.15s ease;
+  }
+}
+
+.iconButton_size_lg {
+  & > svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  &::after {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.iconButton_size_md {
+  & > svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  &::after {
+    width: 30px;
+    height: 30px;
+  }
+}
