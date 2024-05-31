@@ -4,11 +4,11 @@
     "baseUrl": "src",
     "jsx": "react-jsx",
     "moduleResolution": "nodenext",
-    "target": "ES2015" ,
-    "module": "NodeNext" ,
-    "esModuleInterop": true ,
-    "forceConsistentCasingInFileNames": true ,
-    "strict": true ,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "skipLibCheck": true,
     "paths": {
       "@src/*": ["*"],
@@ -16,8 +16,10 @@
       "@static/*": ["static/*"],
       "@pages/*": ["pages/*"],
       "@utils/*": ["utils/*"],
-      "@hooks/*": ["hooks/*"]
-    },
+      "@hooks/*": ["hooks/*"],
+      "@lib/*": ["lib/*"],
+      "@providers/*": ["providers/*"]
+    }
   },
-  "include": ["src", "declaration.d.ts"],
+  "include": ["src", "declaration.d.ts"]
 }

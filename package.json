@@ -2,8 +2,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack serve --hot --open",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint": "eslint"
   },
   "babel": {
     "presets": [
