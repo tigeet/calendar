@@ -1,0 +1,87 @@
+.nav {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (orientation: landscape) and (width < 1000px) {
+    padding: 8px 64px;
+  }
+
+  .nav-date {
+    width: 200px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .nav-month {
+    color: black;
+    font-size: 32px;
+  }
+
+  .nav-year {
+    color: rgb(128, 126, 126);
+    font-size: 30px;
+  }
+
+  .nav-controls {
+    display: flex;
+  }
+
+  .nav-setPageIcon {
+    color: #e30000;
+  }
+  .nav-today {
+    cursor: pointer;
+    color: #e30000;
+    font-size: 18px;
+    padding: 4.5px 8px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+    &:hover {
+      transition: background-color 0.15s ease;
+      background-color: rgb(230, 230, 230);
+    }
+  }
+
+  .nav-view {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    border-radius: 6px;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.15s ease;
+    &:hover {
+      transition: background-color 0.15s ease;
+      background-color: rgb(212, 212, 212);
+    }
+  }
+
+  .nav-viewItem {
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 4px 12px;
+  }
+
+  .nav-viewItem_selected {
+    background-color: white;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  @media screen and (width < 762px) {
+    .nav-date {
+      flex-direction: column;
+    }
+
+    .nav-viewItem {
+      padding: 4px 4px;
+    }
+  }
+}
