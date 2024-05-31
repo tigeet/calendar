@@ -1,0 +1,65 @@
+/* eslint-disable */
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const {
+  default: TsconfigPathsPlugin,
+} = require("tsconfig-paths-webpack-plugin");
+
+module.exports = {
+  entry: "./src/index.tsx",
+  mode: "development",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+        ],
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jp(e*)g|gif)$/,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "@svgr/webpack",
+          },
+        ],
+      },
+    ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "tsconfig.json"),
+      }),
+    ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, "public"),
+    },
+    port: 9090,
+    hot: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
+};
