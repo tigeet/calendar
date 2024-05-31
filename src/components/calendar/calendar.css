@@ -1,0 +1,12 @@
+.calendar {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 30px repeat(6, 1fr);
+  gap: 6px 4px;
+
+  .calendar-weekday {
+    border-bottom: 1px solid gray;
+    font-size: 22px;
+  }
+}
