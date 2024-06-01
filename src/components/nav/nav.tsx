@@ -5,13 +5,14 @@ import { getMonthName } from "@utils/getMonthName";
 import { getNextMonth } from "@utils/getNextMonth";
 import { getPreviousMonth } from "@utils/getPreviousMonth";
 import React, { memo, useCallback } from "react";
-import IconButton from "../iconButton/iconButton";
+import IconButton from "@components/iconButton/iconButton";
 import PrevIcon from "@static/chevron-left.svg";
 import NextIcon from "@static/chevron-right.svg";
 import "./nav.css";
 import { getDay } from "@utils/getDay";
 import { getPreviousWeek } from "@utils/getPreviousWeek";
 import { getNextWeek } from "@utils/getNextWeek";
+import ProfileButton from "@components/profileButton/profileButton";
 const cnNav = cn("nav");
 
 type Props = {
@@ -80,6 +81,8 @@ const Nav = ({ view, onViewChange }: Props) => {
           icon={<NextIcon className={cnNav("setPageIcon")} />}
         />
       </div>
+
+      <ProfileButton />
     </nav>
   );
 };

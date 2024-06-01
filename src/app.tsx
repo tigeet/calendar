@@ -5,16 +5,19 @@ import "./app.css";
 import "./reset.css";
 import { ModalProvider } from "./providers/modalProvider";
 import { DateProvider } from "./providers/dateProvider";
+import { ProfileProvider } from "./providers/profileProvider";
 
 const App = () => {
   return (
-    <TodoProvider>
-      <ModalProvider>
-        <DateProvider>
-          <Main />
-        </DateProvider>
-      </ModalProvider>
-    </TodoProvider>
+    <ProfileProvider>
+      <TodoProvider>
+        <ModalProvider>
+          <DateProvider>
+            <Main />
+          </DateProvider>
+        </ModalProvider>
+      </TodoProvider>
+    </ProfileProvider>
   );
 };
 

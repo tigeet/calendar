@@ -4,14 +4,16 @@
   height: 100%;
   left: 0px;
   top: 0px;
+  z-index: 1000;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.356);
 
-  width: -moz-available; /* WebKit-based browsers will ignore this. */
-  width: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  width: -moz-available;
+  width: -webkit-fill-available;
   width: fill-available;
 
   .modal-content {
+    z-index: 10000;
     height: 80%;
     max-width: 300px;
     width: 100%;

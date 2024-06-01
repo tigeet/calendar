@@ -17,7 +17,7 @@ import { useModal } from "@hooks/useModal";
 import CloseIcon from "@static/x.svg";
 import "./modal.css";
 import { getMonthName } from "@utils/getMonthName";
-import IconButton from "../iconButton/iconButton";
+import IconButton from "@components/iconButton/iconButton";
 
 const cnModal = cn("modal");
 

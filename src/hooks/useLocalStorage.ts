@@ -11,7 +11,10 @@ export function useLocalStorage<T>({
 }: Props<T>): [T, Dispatch<SetStateAction<T>>] {
   const [value, setValue] = useState<T>(() => {
     const storedValue = localStorage.getItem(key);
-    if (!storedValue) return defaultValue;
+    if (!storedValue) {
+      localStorage.setItem(key, JSON.stringify(defaultValue));
+      return defaultValue;
+    }
 
     try {
       return JSON.parse(storedValue);
@@ -22,9 +25,9 @@ export function useLocalStorage<T>({
 
   const handleSetValue: Dispatch<SetStateAction<T>> = useCallback(
     (action) => {
+      console.log("@set value", action, action instanceof Function);
       const computedValue = action instanceof Function ? action(value) : value;
       setValue(computedValue);
-
       localStorage.setItem(key, JSON.stringify(computedValue));
     },
     [key, value]

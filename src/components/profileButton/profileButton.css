@@ -1,0 +1,53 @@
+.profileButton {
+  position: relative;
+
+  .profileButton-settingsIcon {
+    color: #e30000;
+  }
+
+  .profileButton-popup {
+    z-index: 10;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(206, 205, 205);
+    top: 120%;
+    right: 0px;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .profileButton-profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .profileButton-profile {
+    white-space: nowrap;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      transition: background-color 0.15s ease;
+      background-color: rgb(230, 230, 230);
+    }
+  }
+
+  .profileButton-point {
+    background-color: rgb(52, 170, 220);
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+  }
+  .profileButton-form {
+    display: flex;
+    gap: 4px;
+  }
+}

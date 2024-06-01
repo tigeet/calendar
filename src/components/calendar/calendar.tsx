@@ -5,7 +5,7 @@ import { getFirstDayOfMonth } from "@utils/getFirstDayOfMonth";
 import { getLastDayOfMonth } from "@utils/getLastDayOfMonth";
 import { createDateRange } from "@utils/createDateRange";
 import { WEEKDAY } from "@utils/getWeekdayName";
-import Todo from "../todo/todo";
+import Todo from "@components/todo/todo";
 import { useDate } from "@hooks/useDate";
 
 const cnCalendar = cn("calendar");

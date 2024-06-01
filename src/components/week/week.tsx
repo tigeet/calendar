@@ -1,14 +1,15 @@
 import { cn } from "@bem-react/classname";
 import React, { memo } from "react";
-import "./week.css";
 import { createDateRange } from "@utils/createDateRange";
 import { WEEKDAY } from "@utils/getWeekdayName";
-import Todo from "../todo/todo";
+import Todo from "@components/todo/todo";
 import { useDate } from "@hooks/useDate";
 import { getFirstDayOfWeek } from "@utils/getFirstDayOfWeek";
 import { getLastDayOfWeek } from "@utils/getLastDayOfWeek";
 
+import "./week.css";
 const cnWeek = cn("week");
+
 const Week = () => {
   const { date } = useDate();
   const firstDay = getFirstDayOfWeek(date);

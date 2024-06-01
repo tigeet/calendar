@@ -1,7 +1,8 @@
 import { useLocalStorage } from "@hooks/useLocalStorage";
+import { useProfile } from "@src/hooks/useProfile";
 import { TTodo } from "@src/types";
 import { makeId } from "@utils/makeId";
-import React, { createContext, useCallback } from "react";
+import React, { createContext, useCallback, useMemo } from "react";
 type Props = {
   children?: React.ReactNode;
 };
@@ -21,6 +22,8 @@ type TTodoContext = {
 };
 export const TodoContext = createContext<null | TTodoContext>(null);
 export const TodoProvider = ({ children }: Props) => {
+  const { selected } = useProfile();
+
   const [todos, setTodos] = useLocalStorage<TTodo[]>({
     key: "todos",
     defaultValue: [],
@@ -35,10 +38,11 @@ export const TodoProvider = ({ children }: Props) => {
           createdAt: createdAt.getTime(),
           completed: false,
           title,
+          createdBy: selected.id,
         },
       ]);
     },
-    [setTodos]
+    [selected.id, setTodos]
   );
 
   const deleteTodo = useCallback(
@@ -55,8 +59,14 @@ export const TodoProvider = ({ children }: Props) => {
     [setTodos]
   );
 
+  const profileTodos = useMemo(
+    () => todos.filter((todo) => todo.createdBy === selected.id),
+    [selected.id, todos]
+  );
   return (
-    <TodoContext.Provider value={{ todos, addTodo, deleteTodo, toggleTodo }}>
+    <TodoContext.Provider
+      value={{ todos: profileTodos, addTodo, deleteTodo, toggleTodo }}
+    >
       {children}
     </TodoContext.Provider>
   );
