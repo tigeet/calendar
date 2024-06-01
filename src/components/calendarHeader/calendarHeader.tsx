@@ -3,8 +3,8 @@ import { WEEKDAY } from "@utils/getWeekdayName";
 import React, { memo } from "react";
 
 import "./calendarHeader.css";
-
 const cnCalendarHeader = cn("calendarHeader");
+
 const CalendarHeader = () => {
   return (
     <div className={cnCalendarHeader()}>

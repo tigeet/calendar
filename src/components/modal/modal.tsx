@@ -9,17 +9,17 @@ import React, {
   useRef,
   useState,
 } from "react";
-import DeleteIcon from "@static/trash-2.svg";
 import clsx from "clsx";
 import { useTodos } from "@hooks/useTodos";
 import { areSameDay } from "@utils/areSameDay";
 import { useModal } from "@hooks/useModal";
 import CloseIcon from "@static/x.svg";
-import "./modal.css";
 import { getMonthName } from "@utils/getMonthName";
 import IconButton from "@components/iconButton/iconButton";
 import useKeyPress from "@src/hooks/useKeyPress";
+import DeleteIcon from "@static/trash-2.svg";
 
+import "./modal.css";
 const cnModal = cn("modal");
 
 type Props = {
@@ -39,7 +39,7 @@ const Modal = ({ className }: Props) => {
     callback: close,
     keys: useMemo(() => ["Esc", "Escape"], []),
   });
-  
+
   const displayedTodos = useMemo(
     () =>
       todos.filter((todo) => {

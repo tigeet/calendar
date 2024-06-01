@@ -4,15 +4,16 @@ import React, { memo, useEffect, useMemo, useState } from "react";
 import { areSameDay } from "@utils/areSameDay";
 import { useModal } from "@hooks/useModal";
 import { fetchService } from "@lib/fetch/fetch";
-import "./todo.css";
 import clsx from "clsx";
+
+import "./todo.css";
+const cnTodo = cn("todo");
+
 type Props = {
   date: Date;
   isFiller: boolean;
   limit: number;
 };
-
-const cnTodo = cn("todo");
 
 const Todo = ({ date, isFiller, limit }: Props) => {
   const { todos } = useTodos();

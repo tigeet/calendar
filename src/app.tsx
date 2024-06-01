@@ -1,11 +1,12 @@
 import React, { memo } from "react";
 import { TodoProvider } from "./providers/todoProvider";
 import Main from "./pages/main/main";
-import "./app.css";
-import "./reset.css";
 import { ModalProvider } from "./providers/modalProvider";
 import { DateProvider } from "./providers/dateProvider";
 import { ProfileProvider } from "./providers/profileProvider";
+
+import "./app.css";
+import "./reset.css";
 
 const App = () => {
   return (

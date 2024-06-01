@@ -4,7 +4,6 @@ import { cn } from "@bem-react/classname";
 import ActionButton from "@components/actionButton/actionButton";
 import PlusIcon from "@static/plus.svg";
 
-import "./main.css";
 import { useModal } from "@hooks/useModal";
 import Modal from "@components/modal/modal";
 import { useDate } from "@hooks/useDate";
@@ -14,7 +13,10 @@ import { View } from "@src/types";
 import Week from "@components/week/week";
 import useUrlState from "@hooks/useUrlState";
 import CalendarHeader from "@src/components/calendarHeader/calendarHeader";
+
+import "./main.css";
 const cnMain = cn("main");
+
 const Main = () => {
   const { visible, open, date: modalDate } = useModal();
   const { setDate } = useDate();
@@ -30,6 +32,7 @@ const Main = () => {
     },
     [setDate, setView]
   );
+
   return (
     <div className={cnMain()}>
       <Nav view={view} onViewChange={handleSetView} />

@@ -8,12 +8,13 @@ import React, { memo, useCallback } from "react";
 import IconButton from "@components/iconButton/iconButton";
 import PrevIcon from "@static/chevron-left.svg";
 import NextIcon from "@static/chevron-right.svg";
-import "./nav.css";
 import { getDay } from "@utils/getDay";
 import { getPreviousWeek } from "@utils/getPreviousWeek";
 import { getNextWeek } from "@utils/getNextWeek";
 import ProfileButton from "@components/profileButton/profileButton";
+
 const cnNav = cn("nav");
+import "./nav.css";
 
 type Props = {
   view: View;
@@ -83,7 +84,7 @@ const Nav = ({ view, onViewChange }: Props) => {
           />
         </div>
       </div>
-      
+
       <ProfileButton />
     </nav>
   );
