@@ -8,6 +8,7 @@ import { getFirstDayOfWeek } from "@utils/getFirstDayOfWeek";
 import { getLastDayOfWeek } from "@utils/getLastDayOfWeek";
 
 import "./week.css";
+import CalendarHeader from "../calendarHeader/calendarHeader";
 const cnWeek = cn("week");
 
 const Week = () => {
@@ -18,19 +19,17 @@ const Week = () => {
 
   return (
     <div className={cnWeek()}>
-      {WEEKDAY.map((weekday) => (
-        <span key={weekday} className={cnWeek("weekday")}>
-          {weekday}
-        </span>
-      ))}
-      {dateRange.map((d) => (
-        <Todo
-          limit={29}
-          date={d}
-          key={d.getTime()}
-          isFiller={date.getMonth() !== d.getMonth()}
-        />
-      ))}
+      <CalendarHeader />
+      <div className={cnWeek("content")}>
+        {dateRange.map((d) => (
+          <Todo
+            limit={29}
+            date={d}
+            key={d.getTime()}
+            isFiller={date.getMonth() !== d.getMonth()}
+          />
+        ))}
+      </div>
     </div>
   );
 };

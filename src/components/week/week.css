@@ -1,12 +1,15 @@
 .week {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 30px 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   height: 100%;
-  gap: 8px 4px;
 
-  .week-weekday {
-    border-bottom: 1px solid gray;
-    font-size: 22px;
+  .week-content {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
+    gap: 8px 4px;
   }
 }

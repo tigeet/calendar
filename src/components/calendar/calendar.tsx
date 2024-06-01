@@ -7,6 +7,7 @@ import { createDateRange } from "@utils/createDateRange";
 import { WEEKDAY } from "@utils/getWeekdayName";
 import Todo from "@components/todo/todo";
 import { useDate } from "@hooks/useDate";
+import CalendarHeader from "@components/calendarHeader/calendarHeader";
 
 const cnCalendar = cn("calendar");
 const Calendar = () => {
@@ -17,13 +18,7 @@ const Calendar = () => {
 
   return (
     <div className={cnCalendar()}>
-      <div className={cnCalendar("header")}>
-        {WEEKDAY.map((weekday) => (
-          <span key={weekday} className={cnCalendar("weekday")}>
-            {weekday}
-          </span>
-        ))}
-      </div>
+      <CalendarHeader />
 
       <div className={cnCalendar("content")}>
         {dateRange.map((d) => (

@@ -4,18 +4,6 @@
   flex-direction: column;
   gap: 8px;
 
-  .calendar-header {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    height: 30px;
-    gap: 4px;
-  }
-
-  .calendar-weekday {
-    border-bottom: 1px solid gray;
-    font-size: 22px;
-  }
-
   .calendar-content {
     display: grid;
     grid-template-columns: repeat(7, 1fr);

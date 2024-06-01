@@ -1,0 +1,11 @@
+.calendarHeader {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 30px;
+  gap: 4px;
+
+  .calendarHeader-day {
+    border-bottom: 1px solid gray;
+    font-size: 22px;
+  }
+}
