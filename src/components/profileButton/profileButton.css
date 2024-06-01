@@ -27,8 +27,9 @@
 
   .profileButton-profile {
     white-space: nowrap;
-    padding: 4px;
+    padding: 4px 8px;
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: space-between;
     border-radius: 4px;
@@ -49,5 +50,6 @@
   .profileButton-form {
     display: flex;
     gap: 4px;
+    padding: 4px 8px;
   }
 }

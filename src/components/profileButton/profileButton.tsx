@@ -1,4 +1,11 @@
-import React, { FormEvent, memo, useCallback, useRef, useState } from "react";
+import React, {
+  FormEvent,
+  memo,
+  useCallback,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import IconButton from "@components/iconButton/iconButton";
 import { cn } from "@bem-react/classname";
@@ -6,9 +13,11 @@ import { useProfile } from "@src/hooks/useProfile";
 import useOutsideClick from "@src/hooks/useOutsideClick";
 import useKeyPress from "@src/hooks/useKeyPress";
 
-import SettingsIcon from "@static/settings.svg";
 import PlusIcon from "@static/plus.svg";
+import UserIcon from "@static/user.svg";
+
 import "./profileButton.css";
+
 const cnProfileButton = cn("profileButton");
 
 const ProfileButton = () => {
@@ -27,12 +36,15 @@ const ProfileButton = () => {
   const handleAddProfile = useCallback(
     (e: FormEvent) => {
       e.preventDefault();
+
       if (!profileName) return;
+
       addProfile(profileName);
       setProfileName("");
     },
     [addProfile, profileName]
   );
+
   useKeyPress({
     callback: useCallback(() => setPopupOpen(false), []),
     keys: useMemo(() => ["Esc", "Escape"], []),
@@ -45,8 +57,9 @@ const ProfileButton = () => {
         size="md"
         onClick={handleProfileButtonClick}
         ref={buttonRef}
-        icon={<SettingsIcon className={cnProfileButton("settingsIcon")} />}
+        icon={<UserIcon className={cnProfileButton("settingsIcon")} />}
       />
+
       {popupOpen && (
         <div className={cnProfileButton("popup")} ref={ref}>
           <div className={cnProfileButton("profiles")}>
