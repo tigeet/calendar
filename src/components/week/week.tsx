@@ -27,7 +27,7 @@ const Week = () => {
         <Todo
           limit={29}
           date={d}
-          key={d.toISOString()}
+          key={d.getTime()}
           isFiller={date.getMonth() !== d.getMonth()}
         />
       ))}

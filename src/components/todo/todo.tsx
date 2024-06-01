@@ -40,7 +40,7 @@ const Todo = ({ date, isFiller, limit }: Props) => {
 
         if (json) setIsDayoff(true);
       } catch (error) {
-        console.log("error", error);
+        console.log("@error while fetching isDayOff", error);
       }
     }
 
@@ -58,6 +58,7 @@ const Todo = ({ date, isFiller, limit }: Props) => {
       >
         {date.getDate()}
       </span>
+
       <div className={cnTodo("items")}>
         {displayedTodos.slice(0, limit).map((todo) => (
           <div key={todo.id} className={cnTodo("item")}>
@@ -78,6 +79,7 @@ const Todo = ({ date, isFiller, limit }: Props) => {
           {displayedTodos.length}
         </span>
       )}
+
       {extraTodosCount > 0 && (
         <span className={cnTodo("extra")}>And {extraTodosCount} more</span>
       )}

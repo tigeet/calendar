@@ -25,7 +25,6 @@ export function useLocalStorage<T>({
 
   const handleSetValue: Dispatch<SetStateAction<T>> = useCallback(
     (action) => {
-      console.log("@set value", action, action instanceof Function);
       const computedValue = action instanceof Function ? action(value) : value;
       setValue(computedValue);
       localStorage.setItem(key, JSON.stringify(computedValue));

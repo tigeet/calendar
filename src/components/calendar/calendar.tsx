@@ -17,19 +17,24 @@ const Calendar = () => {
 
   return (
     <div className={cnCalendar()}>
-      {WEEKDAY.map((weekday) => (
-        <span key={weekday} className={cnCalendar("weekday")}>
-          {weekday}
-        </span>
-      ))}
-      {dateRange.map((d) => (
-        <Todo
-          limit={2}
-          date={d}
-          key={d.toISOString()}
-          isFiller={date.getMonth() !== d.getMonth()}
-        />
-      ))}
+      <div className={cnCalendar("header")}>
+        {WEEKDAY.map((weekday) => (
+          <span key={weekday} className={cnCalendar("weekday")}>
+            {weekday}
+          </span>
+        ))}
+      </div>
+
+      <div className={cnCalendar("content")}>
+        {dateRange.map((d) => (
+          <Todo
+            limit={3}
+            date={d}
+            key={d.getTime()}
+            isFiller={date.getMonth() !== d.getMonth()}
+          />
+        ))}
+      </div>
     </div>
   );
 };
