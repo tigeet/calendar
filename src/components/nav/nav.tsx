@@ -51,37 +51,39 @@ const Nav = ({ view, onViewChange }: Props) => {
         <span className={cnNav("year")}>{date.getFullYear()}</span>
       </div>
 
-      <div className={cnNav("view")}>
-        <button
-          onClick={() => onViewChange("week")}
-          className={cnNav("viewItem", { selected: view === "week" })}
-        >
-          Week
-        </button>
-        <button
-          onClick={() => onViewChange("month")}
-          className={cnNav("viewItem", { selected: view === "month" })}
-        >
-          Month
-        </button>
-      </div>
-
       <div className={cnNav("controls")}>
-        <IconButton
-          size="md"
-          onClick={handlePrevPage}
-          icon={<PrevIcon className={cnNav("setPageIcon")} />}
-        />
-        <button onClick={handleSetToday} className={cnNav("today")}>
-          Today
-        </button>
-        <IconButton
-          size="md"
-          onClick={handleNextPage}
-          icon={<NextIcon className={cnNav("setPageIcon")} />}
-        />
-      </div>
+        <div className={cnNav("view")}>
+          <button
+            onClick={() => onViewChange("week")}
+            className={cnNav("viewItem", { selected: view === "week" })}
+          >
+            Week
+          </button>
+          <button
+            onClick={() => onViewChange("month")}
+            className={cnNav("viewItem", { selected: view === "month" })}
+          >
+            Month
+          </button>
+        </div>
 
+        <div className={cnNav("dateControls")}>
+          <IconButton
+            size="md"
+            onClick={handlePrevPage}
+            icon={<PrevIcon className={cnNav("setPageIcon")} />}
+          />
+          <button onClick={handleSetToday} className={cnNav("today")}>
+            Today
+          </button>
+          <IconButton
+            size="md"
+            onClick={handleNextPage}
+            icon={<NextIcon className={cnNav("setPageIcon")} />}
+          />
+        </div>
+      </div>
+      
       <ProfileButton />
     </nav>
   );

@@ -11,7 +11,12 @@
     flex: 1 1 auto;
     position: relative;
 
-    @media screen and (orientation: landscape) and (width < 1000px) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+
+    @media screen and (orientation: landscape) and (width < 1200px) {
       padding: 8px 64px;
     }
   }

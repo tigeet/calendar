@@ -13,6 +13,7 @@ import { getDay } from "@utils/getDay";
 import { View } from "@src/types";
 import Week from "@components/week/week";
 import useUrlState from "@hooks/useUrlState";
+import CalendarHeader from "@src/components/calendarHeader/calendarHeader";
 const cnMain = cn("main");
 const Main = () => {
   const { visible, open, date: modalDate } = useModal();
@@ -33,6 +34,7 @@ const Main = () => {
     <div className={cnMain()}>
       <Nav view={view} onViewChange={handleSetView} />
       <main className={cnMain("main")}>
+        <CalendarHeader />
         {view === "month" ? <Calendar /> : <Week />}
         <ActionButton className={cnMain("actionButton")} onClick={() => open()}>
           <PlusIcon className={cnMain("actionButtonIcon")} />

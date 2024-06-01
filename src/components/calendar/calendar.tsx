@@ -18,18 +18,14 @@ const Calendar = () => {
 
   return (
     <div className={cnCalendar()}>
-      <CalendarHeader />
-
-      <div className={cnCalendar("content")}>
-        {dateRange.map((d) => (
-          <Todo
-            limit={3}
-            date={d}
-            key={d.getTime()}
-            isFiller={date.getMonth() !== d.getMonth()}
-          />
-        ))}
-      </div>
+      {dateRange.map((d) => (
+        <Todo
+          limit={3}
+          date={d}
+          key={d.getTime()}
+          isFiller={date.getMonth() !== d.getMonth()}
+        />
+      ))}
     </div>
   );
 };

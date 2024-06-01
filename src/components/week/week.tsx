@@ -19,17 +19,14 @@ const Week = () => {
 
   return (
     <div className={cnWeek()}>
-      <CalendarHeader />
-      <div className={cnWeek("content")}>
-        {dateRange.map((d) => (
-          <Todo
-            limit={29}
-            date={d}
-            key={d.getTime()}
-            isFiller={date.getMonth() !== d.getMonth()}
-          />
-        ))}
-      </div>
+      {dateRange.map((d) => (
+        <Todo
+          limit={29}
+          date={d}
+          key={d.getTime()}
+          isFiller={date.getMonth() !== d.getMonth()}
+        />
+      ))}
     </div>
   );
 };
