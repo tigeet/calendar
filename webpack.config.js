@@ -9,18 +9,14 @@ module.exports = {
   entry: "./src/index.tsx",
   mode: "development",
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: "/",
+    filename: "./bundle.js",
+    path: path.resolve(__dirname, "build"),
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-        ],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.tsx?$/,
@@ -47,14 +43,14 @@ module.exports = {
       new TsconfigPathsPlugin({
         configFile: path.resolve(__dirname, "tsconfig.json"),
       }),
-    ]
+    ],
   },
   devServer: {
     historyApiFallback: true,
     static: {
       directory: path.resolve(__dirname, "public"),
     },
-    port: 9090,
+    port: 3030,
     hot: true,
   },
   plugins: [
