@@ -4,6 +4,7 @@ import IconButton from "@components/iconButton/iconButton";
 import { cn } from "@bem-react/classname";
 import { useProfile } from "@src/hooks/useProfile";
 import useOutsideClick from "@src/hooks/useOutsideClick";
+import useKeyPress from "@src/hooks/useKeyPress";
 
 import SettingsIcon from "@static/settings.svg";
 import PlusIcon from "@static/plus.svg";
@@ -32,6 +33,10 @@ const ProfileButton = () => {
     },
     [addProfile, profileName]
   );
+  useKeyPress({
+    callback: useCallback(() => setPopupOpen(false), []),
+    keys: useMemo(() => ["Esc", "Escape"], []),
+  });
 
   return (
     <div className={cnProfileButton()}>

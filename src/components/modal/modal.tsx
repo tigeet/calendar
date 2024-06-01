@@ -18,6 +18,7 @@ import CloseIcon from "@static/x.svg";
 import "./modal.css";
 import { getMonthName } from "@utils/getMonthName";
 import IconButton from "@components/iconButton/iconButton";
+import useKeyPress from "@src/hooks/useKeyPress";
 
 const cnModal = cn("modal");
 
@@ -29,6 +30,16 @@ const Modal = ({ className }: Props) => {
   const { date, close } = useModal();
   const [title, setTitle] = useState("");
   const { todos, toggleTodo, addTodo, deleteTodo } = useTodos();
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  useKeyPress({
+    callback: close,
+    keys: useMemo(() => ["Esc", "Escape"], []),
+  });
+  
   const displayedTodos = useMemo(
     () =>
       todos.filter((todo) => {
@@ -37,10 +48,6 @@ const Modal = ({ className }: Props) => {
       }),
     [date, todos]
   );
-
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
 
   const handleTodoClick = useCallback(
     (todo: TTodo) => {
